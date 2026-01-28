@@ -1,0 +1,297 @@
+# =============================================================================
+# PROJECT BRIEF: Телемед-Питомец
+# =============================================================================
+# Документ создан: Orchestrator Agent | Дата: 2026-01-28
+# =============================================================================
+
+metadata:
+  project_name: "Телемед-Питомец"
+  codename: "telemed-pitomec"
+  category: "PetTech / HealthTech"
+  platform: "Telegram WebApp"
+  created_by: "Orchestrator Agent"
+  created_at: "2026-01-28"
+  version: "0.1.0"
+  phase: "Discovery"
+
+# -----------------------------------------------------------------------------
+# VISION & PROBLEM
+# -----------------------------------------------------------------------------
+vision:
+  one_liner: "Телеветеринария для владельцев домашних животных с ИИ-диагностикой"
+  
+  problem_statement: |
+    Владельцы домашних животных испытывают тревогу при появлении симптомов у питомца:
+    - Непонятно, насколько серьёзна проблема (ехать в клинику или подождать?)
+    - Клиники работают не 24/7, очереди и долгие поездки
+    - Нет единого места для хранения истории здоровья питомца
+    - Сложно отслеживать прививки, профилактику, приём лекарств
+    
+  solution: |
+    Telegram WebApp, объединяющий:
+    - ИИ-диагностику по фото для быстрой оценки симптомов
+    - Видеоконсультации с ветеринарами 24/7
+    - Дневник здоровья питомца
+    - Напоминания о прививках и профилактике
+    - Маркетплейс кормов и лекарств
+
+# -----------------------------------------------------------------------------
+# CLARIFIED REQUIREMENTS (from stakeholder)
+# -----------------------------------------------------------------------------
+clarified_requirements:
+  animals_scope: "Все домашние животные (кошки, собаки, птицы, грызуны, рептилии, рыбы и др.)"
+  ai_diagnosis_level: "Dual: успокоить/направить + реальная предварительная диагностика"
+  vet_model: "Партнёрство с ветеринарами и клиниками (не штат)"
+  budget_constraints: "Нет жёстких ограничений"
+  launch_priority: "Качество > Скорость (отложенный запуск допустим)"
+  legal_required: true
+  tech_stack:
+    frontend: "React + Telegram WebApp SDK"
+    backend: "Django (Python)"
+  development_approach: "AI-agent development (Claude)"
+  platform_focus: "100% Telegram WebApp"
+
+# -----------------------------------------------------------------------------
+# TARGET AUDIENCE
+# -----------------------------------------------------------------------------
+target_audience:
+  primary:
+    segment: "Владельцы домашних животных (все виды)"
+    size: "40M+ в России"
+    characteristics:
+      - "Городские жители 25-45 лет"
+      - "Средний+ доход"
+      - "Активные пользователи Telegram"
+      - "Готовы платить за здоровье питомца"
+    pain_points:
+      - "Тревога при симптомах — не знают, насколько серьёзно"
+      - "Неудобство поездок в клинику"
+      - "Забывают о прививках и профилактике"
+      - "Нет единой истории здоровья"
+      
+  secondary:
+    - segment: "Ветеринарные клиники"
+      value: "Канал привлечения клиентов, онлайн-консультации"
+    - segment: "Производители кормов/лекарств"
+      value: "Канал продаж через маркетплейс"
+
+# -----------------------------------------------------------------------------
+# KEY FEATURES (MVP SCOPE TBD)
+# -----------------------------------------------------------------------------
+features:
+  core:
+    - id: "ai-diagnosis"
+      name: "ИИ-диагностика"
+      description: "Загрузка фото симптома → предварительный диагноз + рекомендации"
+      priority: "must-have"
+      
+    - id: "video-consultation"
+      name: "Видеоконсультации 24/7"
+      description: "Видеозвонки с лицензированными ветеринарами"
+      priority: "must-have"
+      
+    - id: "health-diary"
+      name: "Дневник здоровья"
+      description: "Трекинг веса, активности, питания, симптомов"
+      priority: "must-have"
+      
+    - id: "vaccination-reminders"
+      name: "Напоминания о прививках"
+      description: "Push-уведомления о прививках и профилактике"
+      priority: "must-have"
+      
+    - id: "vet-chat"
+      name: "Чат с ветеринаром"
+      description: "Асинхронный чат для быстрых вопросов"
+      priority: "should-have"
+      
+    - id: "marketplace"
+      name: "Маркетплейс"
+      description: "Корма, лекарства с доставкой"
+      priority: "could-have"
+      
+    - id: "clinic-search"
+      name: "Поиск клиники"
+      description: "Карта клиник с рейтингами и отзывами"
+      priority: "could-have"
+
+# -----------------------------------------------------------------------------
+# BUSINESS MODEL
+# -----------------------------------------------------------------------------
+business_model:
+  monetization:
+    - type: "Subscription"
+      tiers:
+        - name: "Basic"
+          price: "299₽/мес"
+          features: ["Дневник здоровья", "Напоминания", "2 ИИ-диагностики/мес"]
+        - name: "Premium"
+          price: "699₽/мес"
+          features: ["Безлимит ИИ-диагностики", "Скидки на консультации", "Приоритетная поддержка"]
+          
+    - type: "Transactional"
+      items:
+        - "Консультации: от 500₽"
+        - "Комиссия маркетплейса: 10-15%"
+        
+  market_size:
+    tam: "~20 млрд ₽"
+    serviceable_market: "Владельцы домашних животных в городах-миллионниках"
+
+# -----------------------------------------------------------------------------
+# COMPETITIVE ADVANTAGES
+# -----------------------------------------------------------------------------
+competitive_advantages:
+  - "ИИ-диагностика снижает тревожность и фильтрует ложные тревоги"
+  - "Видеоконсультации 24/7 экономят время на поездку в клинику"
+  - "Комплексный подход: диагностика + консультации + товары"
+  - "Telegram WebApp — низкий порог входа, удобство использования"
+  - "Данные о здоровье питомца всегда под рукой"
+
+# -----------------------------------------------------------------------------
+# WHY TELEGRAM WEBAPP
+# -----------------------------------------------------------------------------
+platform_rationale:
+  telegram_webapp:
+    benefits:
+      - "Быстрая отправка фото/видео симптомов (нативный функционал)"
+      - "Push-напоминания через Telegram"
+      - "Единое хранилище истории в привычном мессенджере"
+      - "Оплата через Telegram Payments"
+      - "Виральность через шаринг в чатах"
+    considerations:
+      - "Ограничения WebApp API"
+      - "Необходимость бэкенда для хранения данных"
+      - "Интеграция с видеозвонками"
+
+# -----------------------------------------------------------------------------
+# TECHNICAL CONSIDERATIONS (HIGH-LEVEL)
+# -----------------------------------------------------------------------------
+technical_overview:
+  frontend: 
+    framework: "React 18+"
+    platform: "Telegram WebApp SDK"
+    styling: "TailwindCSS / Telegram UI Kit"
+    state: "Zustand / React Query"
+  backend:
+    framework: "Django 5.x"
+    api: "Django REST Framework"
+    async: "Django Channels (WebSocket для чата)"
+    database: "PostgreSQL"
+    cache: "Redis"
+  ai_ml:
+    - "Computer Vision: анализ фото симптомов (все виды животных)"
+    - "NLP: чат-бот первичной консультации"
+    - "Классификация срочности (triage)"
+  integrations:
+    - "Telegram Bot API + WebApp API"
+    - "Telegram Payments"
+    - "Видеозвонки (WebRTC / Daily.co / Twilio)"
+    - "Push-уведомления через Telegram"
+    - "Партнёрские API (клиники, маркетплейс)"
+  development:
+    approach: "AI-agent driven (Claude)"
+    quality_focus: "TDD, высокое покрытие тестами, код-ревью"
+
+# -----------------------------------------------------------------------------
+# PROJECT PHASES (HIGH-LEVEL)
+# -----------------------------------------------------------------------------
+phases:
+  current: "Discovery"
+  roadmap:
+    - phase: "Discovery"
+      focus: "Исследование, валидация, продуктовая стратегия"
+      deliverables:
+        - "Market Research Report"
+        - "Competitive Analysis"
+        - "User Personas & JTBD"
+        - "Product Vision Document"
+        - "PRD v1 (MVP scope)"
+        
+    - phase: "Design"
+      focus: "UX/UI, архитектура, спецификации"
+      deliverables:
+        - "User Flows"
+        - "Wireframes"
+        - "UI Design System"
+        - "Architecture Decision Records"
+        - "Technical Specifications"
+        
+    - phase: "Development"
+      focus: "Реализация MVP"
+      deliverables:
+        - "Working MVP"
+        - "Test Coverage"
+        - "Documentation"
+        
+    - phase: "Launch"
+      focus: "Запуск, маркетинг, итерации"
+      deliverables:
+        - "Production Deployment"
+        - "Go-to-Market execution"
+        - "Analytics & Feedback loop"
+
+# -----------------------------------------------------------------------------
+# OPEN QUESTIONS (для Discovery)
+# -----------------------------------------------------------------------------
+open_questions:
+  product:
+    - "Какие виды животных поддерживаем в MVP? (только кошки/собаки?)"
+    - "Какой уровень точности ИИ-диагностики приемлем?"
+    - "Как обрабатывать edge cases (экзотические животные, сложные случаи)?"
+    - "Нужна ли интеграция с существующими ветклиниками?"
+    
+  business:
+    - "Модель работы с ветеринарами (штат vs фриланс vs партнёрство с клиниками)?"
+    - "Юридические требования к телемедицине для животных?"
+    - "Страхование ответственности за ИИ-диагностику?"
+    
+  technical:
+    - "Готовые ML-модели или обучение с нуля?"
+    - "Видеозвонки: WebRTC или сторонний сервис (Daily.co, Twilio)?"
+    - "Хостинг и масштабирование для ML-inference?"
+
+# -----------------------------------------------------------------------------
+# NEXT ACTIONS
+# -----------------------------------------------------------------------------
+next_actions:
+  - action: "Market Research"
+    agent: "Research Agent"
+    priority: "high"
+    description: "Анализ рынка PetTech/телеветеринарии в России и мире"
+    
+  - action: "Competitive Analysis"
+    agent: "Research Agent"
+    priority: "high"
+    description: "Детальный анализ конкурентов (Vet.AI, PetDesk, Vetster и др.)"
+    
+  - action: "User Research Plan"
+    agent: "UX Agent"
+    priority: "high"
+    description: "План исследования пользователей, персоны, JTBD"
+    
+  - action: "Product Vision Document"
+    agent: "Product Agent"
+    priority: "high"
+    description: "Формализация видения продукта"
+    
+  - action: "Legal Research"
+    agent: "Research Agent"
+    priority: "medium"
+    description: "Юридические аспекты телеветеринарии в РФ"
+
+# -----------------------------------------------------------------------------
+# STAKEHOLDERS
+# -----------------------------------------------------------------------------
+stakeholders:
+  - role: "Product Owner"
+    responsibilities: "Видение продукта, приоритизация, принятие решений"
+  - role: "Tech Lead"
+    responsibilities: "Архитектура, технические решения"
+  - role: "AI/ML Engineer"
+    responsibilities: "Модели диагностики"
+  - role: "Ветеринарный консультант"
+    responsibilities: "Экспертиза, валидация диагностики"
+
+---
+# Документ создан: Orchestrator Agent | Дата: 2026-01-28

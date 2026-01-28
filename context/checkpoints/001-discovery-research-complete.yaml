@@ -1,0 +1,156 @@
+# =============================================================================
+# CHECKPOINT 001: Discovery Research Complete
+# =============================================================================
+metadata:
+  checkpoint_id: "001"
+  name: "Discovery Research Complete"
+  phase: "Discovery"
+  created_at: "2026-01-28"
+  created_by: "Orchestrator Agent"
+
+# -----------------------------------------------------------------------------
+# SUMMARY
+# -----------------------------------------------------------------------------
+summary: |
+  Завершён первый этап Discovery: Market Research, Competitive Analysis и 
+  Product Vision Document. Рынок оценивается как привлекательный (TAM ~20 млрд ₽),
+  конкурентное окно открыто — AI-телеветеринария в России пустая ниша.
+  Telegram WebApp подтверждён как оптимальная платформа.
+
+# -----------------------------------------------------------------------------
+# KEY FINDINGS
+# -----------------------------------------------------------------------------
+key_findings:
+  market:
+    - "TAM: 50 млрд ₽/год (ветуслуги), SAM: 10-12 млрд ₽ (дистанционные)"
+    - "74.8 млн домашних животных в России"
+    - "Рост телеветеринарии +21% YoY"
+    - "Средний чек в ветклинике 9,706 ₽"
+    - "Telegram: 38.4 млн скачиваний в России, Mini Apps конверсия 5-15%"
+    
+  competitive:
+    - "Ни один российский конкурент не использует AI"
+    - "Telegram WebApp не используется в нише — уникальный формат"
+    - "Международные лидеры (Vetster, FirstVet) не работают в России"
+    - "First mover advantage в AI-телеветеринарии РФ"
+    - "Дефицит 15-41K ветеринаров создаёт спрос на AI-triage"
+    
+  regulatory:
+    - "Специальное регулирование телеветеринарии отсутствует"
+    - "Лицензия на ветеринарную деятельность не требуется для платформы"
+    - "Рекомендуется работа с лицензированными ветеринарами"
+    - "Необходимы дисклеймеры для AI-диагностики"
+
+# -----------------------------------------------------------------------------
+# ARTIFACTS CREATED
+# -----------------------------------------------------------------------------
+artifacts:
+  - path: "context/project-brief.yaml"
+    type: "brief"
+    status: "complete"
+    description: "Project Brief с уточнёнными требованиями"
+    
+  - path: "docs/research/market-research.md"
+    type: "research"
+    status: "complete"
+    description: "Market Research: размер рынка, тренды, аудитория, регуляторика"
+    
+  - path: "docs/research/competitive-analysis.md"
+    type: "research"
+    status: "complete"
+    description: "Competitive Analysis: 12+ конкурентов, SWOT, рекомендации"
+    
+  - path: "docs/product/vision.md"
+    type: "product"
+    status: "complete"
+    description: "Product Vision Document: миссия, персоны, roadmap, метрики"
+
+# -----------------------------------------------------------------------------
+# DECISIONS LOG
+# -----------------------------------------------------------------------------
+decisions:
+  - id: "D001"
+    decision: "Стек: React + Django"
+    rationale: "Выбор stakeholder, подходит для AI-интеграции"
+    
+  - id: "D002"
+    decision: "Платформа: 100% Telegram WebApp"
+    rationale: "Низкий порог входа, нативные фото/видео, push-уведомления"
+    
+  - id: "D003"
+    decision: "Все виды домашних животных в scope"
+    rationale: "Конкурентное преимущество, особенно для экзотов"
+    
+  - id: "D004"
+    decision: "AI-диагностика dual mode"
+    rationale: "И успокоить/triage, и предварительная диагностика"
+    
+  - id: "D005"
+    decision: "Партнёрская модель с ветеринарами"
+    rationale: "Масштабируемость, не требует найма в штат"
+    
+  - id: "D006"
+    decision: "Приоритет качества над скоростью"
+    rationale: "Медицинский продукт требует высокого качества"
+
+# -----------------------------------------------------------------------------
+# OPEN QUESTIONS / BLOCKERS
+# -----------------------------------------------------------------------------
+open_questions:
+  critical:
+    - "Юридическая форма для бизнеса (ИП/ООО/самозанятый)"
+    - "Договорная модель с ветеринарами-партнёрами"
+    - "Позиционирование AI: степень ответственности за рекомендации"
+    - "Провайдер видеозвонков для Telegram WebApp (Daily.co/Twilio/WebRTC)"
+    
+  important:
+    - "Обучение AI-модели: готовые модели vs с нуля"
+    - "Минимальная точность AI для MVP"
+    - "Партнёрства с клиниками для старта"
+
+# -----------------------------------------------------------------------------
+# NEXT ACTIONS
+# -----------------------------------------------------------------------------
+next_actions:
+  immediate:
+    - action: "Legal Research"
+      agent: "Research Agent"
+      priority: "critical"
+      description: "Юридические требования к телеветеринарии, форма бизнеса, договоры"
+      
+    - action: "PRD MVP"
+      agent: "Product Agent"
+      priority: "high"
+      description: "Детальные функциональные требования для MVP"
+      
+    - action: "User Personas & Flows"
+      agent: "UX Agent"
+      priority: "high"
+      description: "Детализация персон, User Flows для ключевых сценариев"
+      
+  next_phase:
+    - action: "System Architecture"
+      agent: "Architect Agent"
+      description: "High-level архитектура, ADR по ключевым решениям"
+      
+    - action: "Data Model"
+      agent: "Data Agent"
+      description: "Доменная модель, схема БД"
+      
+    - action: "UI Design System"
+      agent: "UI Agent"
+      description: "Визуальный язык, компоненты для Telegram WebApp"
+
+# -----------------------------------------------------------------------------
+# METRICS (baseline)
+# -----------------------------------------------------------------------------
+target_metrics:
+  year_1:
+    mau: "100,000"
+    mrr: "5,000,000 ₽"
+    consultations_per_month: "10,000+"
+    nps: "40+"
+  north_star: "Завершённые консультации в месяц"
+
+---
+# Документ создан: Orchestrator Agent | Дата: 2026-01-28
