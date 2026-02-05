@@ -1,0 +1,10 @@
+# Телемед-Питомец — frontend для деплоя на VPS
+# Порт 8095 выбран свободным на сервере (nginx проксирует telemed-pitomec.ru → 127.0.0.1:8095)
+
+services:
+  frontend:
+    build: .
+    container_name: telemed-pitomec-frontend
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8095:80"
